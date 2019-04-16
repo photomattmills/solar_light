@@ -1,5 +1,6 @@
 EESchema Schematic File Version 4
-EELAYER 26 0
+LIBS:solar_light-cache
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -14,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L solar_light:ATTINY-1616MNR U1
+L solar_light-rescue:ATTINY-1616MNR-solar_light U1
 U 1 1 5C9202C7
 P 1350 2450
 F 0 "U1" H 1356 4065 50  0000 C CNN
@@ -25,7 +26,7 @@ F 3 "" H 1800 3650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Battery_Management:MC34673 U2
+L solar_light-rescue:MC34673-Battery_Management U2
 U 1 1 5C9207F0
 P 7500 1800
 F 0 "U2" H 7500 2478 50  0000 C CNN
@@ -36,7 +37,7 @@ F 3 "http://www.nxp.com/docs/en/data-sheet/MC34673.pdf" H 7600 1200 50  0001 L C
 	1    0    0    -1  
 $EndComp
 $Comp
-L LED:WS2812B D?
+L solar_light-rescue:WS2812B-LED D?
 U 1 1 5C920A2F
 P 4150 5400
 F 0 "D?" H 4491 5446 50  0000 L CNN
@@ -47,7 +48,7 @@ F 3 "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf" H 4250 5025 50  0001 
 	1    0    0    -1  
 $EndComp
 $Comp
-L LED:WS2812B D?
+L solar_light-rescue:WS2812B-LED D?
 U 1 1 5C920B0C
 P 5150 5400
 F 0 "D?" H 5491 5446 50  0000 L CNN
@@ -63,4 +64,189 @@ Wire Wire Line
 	4150 5700 5150 5700
 Wire Wire Line
 	4450 5400 4850 5400
+$Comp
+L Connector:Conn_01x02_Female J?
+U 1 1 5CAC0189
+P 9500 1400
+F 0 "J?" H 9528 1376 50  0000 L CNN
+F 1 "Battery" H 9528 1285 50  0000 L CNN
+F 2 "" H 9500 1400 50  0001 C CNN
+F 3 "~" H 9500 1400 50  0001 C CNN
+	1    9500 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x02_Female J?
+U 1 1 5CAC0F37
+P 6900 1100
+F 0 "J?" H 6928 1076 50  0000 L CNN
+F 1 "Solar Cell" H 6928 985 50  0000 L CNN
+F 2 "" H 6900 1100 50  0001 C CNN
+F 3 "~" H 6900 1100 50  0001 C CNN
+	1    6900 1100
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:D_Schottky_Small D?
+U 1 1 5CAC133A
+P 8900 1400
+F 0 "D?" H 8900 1605 50  0000 C CNN
+F 1 "D_Schottky_Small" H 8900 1514 50  0000 C CNN
+F 2 "" V 8900 1400 50  0001 C CNN
+F 3 "~" V 8900 1400 50  0001 C CNN
+	1    8900 1400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9000 1400 9050 1400
+Wire Wire Line
+	8000 1400 8000 1500
+$Comp
+L power:GND #PWR?
+U 1 1 5CAC36C8
+P 9300 1650
+F 0 "#PWR?" H 9300 1400 50  0001 C CNN
+F 1 "GND" H 9305 1477 50  0000 C CNN
+F 2 "" H 9300 1650 50  0001 C CNN
+F 3 "" H 9300 1650 50  0001 C CNN
+	1    9300 1650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9300 1500 9300 1600
+$Comp
+L power:GND #PWR?
+U 1 1 5CAC3D1E
+P 7850 1000
+F 0 "#PWR?" H 7850 750 50  0001 C CNN
+F 1 "GND" H 7855 827 50  0000 C CNN
+F 2 "" H 7850 1000 50  0001 C CNN
+F 3 "" H 7850 1000 50  0001 C CNN
+	1    7850 1000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5CAC4E25
+P 7500 2450
+F 0 "#PWR?" H 7500 2200 50  0001 C CNN
+F 1 "GND" H 7505 2277 50  0000 C CNN
+F 2 "" H 7500 2450 50  0001 C CNN
+F 3 "" H 7500 2450 50  0001 C CNN
+	1    7500 2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7400 2300 7500 2300
+Connection ~ 7500 2300
+$Comp
+L Device:C_Small C?
+U 1 1 5CAC5C29
+P 9050 1500
+F 0 "C?" H 9142 1546 50  0000 L CNN
+F 1 "C_Small" H 9142 1455 50  0000 L CNN
+F 2 "" H 9050 1500 50  0001 C CNN
+F 3 "~" H 9050 1500 50  0001 C CNN
+	1    9050 1500
+	1    0    0    -1  
+$EndComp
+Connection ~ 9050 1400
+Wire Wire Line
+	9050 1400 9300 1400
+Wire Wire Line
+	9050 1600 9300 1600
+Wire Wire Line
+	7500 2300 7500 2450
+Connection ~ 9300 1600
+Wire Wire Line
+	9300 1600 9300 1650
+Wire Wire Line
+	8000 1700 8000 1800
+Text Label 8100 1700 0    50   ~ 0
+Solar+
+Wire Wire Line
+	8100 1700 8000 1700
+Connection ~ 8000 1700
+Text Label 7000 1800 2    50   ~ 0
+Solar+
+Text Label 7500 1300 0    50   ~ 0
+Solar+
+Text Label 7100 1100 0    50   ~ 0
+Solar+
+Wire Wire Line
+	7850 1000 7100 1000
+$Comp
+L power:GND #PWR?
+U 1 1 5CACB124
+P 8300 2250
+F 0 "#PWR?" H 8300 2000 50  0001 C CNN
+F 1 "GND" H 8305 2077 50  0000 C CNN
+F 2 "" H 8300 2250 50  0001 C CNN
+F 3 "" H 8300 2250 50  0001 C CNN
+	1    8300 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 5CACB93D
+P 8200 2100
+F 0 "R?" V 8004 2100 50  0000 C CNN
+F 1 "R_Small" V 8095 2100 50  0000 C CNN
+F 2 "" H 8200 2100 50  0001 C CNN
+F 3 "~" H 8200 2100 50  0001 C CNN
+	1    8200 2100
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8000 2100 8100 2100
+Wire Wire Line
+	8300 2100 8300 2250
+$Comp
+L power:VCC #PWR?
+U 1 1 5CACCD8D
+P 8000 1400
+F 0 "#PWR?" H 8000 1250 50  0001 C CNN
+F 1 "VCC" H 8017 1573 50  0000 C CNN
+F 2 "" H 8000 1400 50  0001 C CNN
+F 3 "" H 8000 1400 50  0001 C CNN
+	1    8000 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR?
+U 1 1 5CACD3A2
+P 8800 1400
+F 0 "#PWR?" H 8800 1250 50  0001 C CNN
+F 1 "VCC" H 8818 1573 50  0000 C CNN
+F 2 "" H 8800 1400 50  0001 C CNN
+F 3 "" H 8800 1400 50  0001 C CNN
+	1    8800 1400
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:VCC #PWR?
+U 1 1 5CACDC33
+P 2100 1550
+F 0 "#PWR?" H 2100 1400 50  0001 C CNN
+F 1 "VCC" H 2117 1723 50  0000 C CNN
+F 2 "" H 2100 1550 50  0001 C CNN
+F 3 "" H 2100 1550 50  0001 C CNN
+	1    2100 1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2000 1550 2100 1550
+$Comp
+L power:GND #PWR?
+U 1 1 5CACEF75
+P 2350 1400
+F 0 "#PWR?" H 2350 1150 50  0001 C CNN
+F 1 "GND" H 2355 1227 50  0000 C CNN
+F 2 "" H 2350 1400 50  0001 C CNN
+F 3 "" H 2350 1400 50  0001 C CNN
+	1    2350 1400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2000 1400 2350 1400
 $EndSCHEMATC
