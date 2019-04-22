@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name solar_light-rescue)(type Legacy)(uri ${KIPRJMOD}/solar_light-rescue.lib)(options "")(descr ""))
+  (lib (name ATSAMD21E18A-MU)(type Legacy)(uri ${KIPRJMOD}/ATSAMD21E18A-MU.lib)(options "")(descr ""))
 )
